@@ -26,6 +26,7 @@
   skip_global_compinit=1
   SHELL_SESSIONS_DISABLE=1
   KEYTIMEOUT=1 # 10ms
+  bindkey -e
   umask 077 # scope permissions of new files to this user
 
 # zsh features
@@ -34,11 +35,10 @@
   autoload -Uz select-word-style ; select-word-style bash
   autoload -Uz colors            ; colors
 
-# zsh history settings
+# zsh history
   setopt extended_history inc_append_history share_history hist_verify
   setopt hist_save_no_dups hist_find_no_dups hist_ignore_space hist_reduce_blanks
-
-# zsh history paths
+  HISTSIZE=1000 SAVEHIST=1000
   HISTFILE="${XDG_CACHE_HOME}/zsh/history-prepend" # permanent history items
   fc -R
   HISTFILE="${XDG_CACHE_HOME}/zsh/history"
@@ -63,11 +63,19 @@
 
 # fuzzy finder
   command -v fd >/dev/null && export FZF_DEFAULT_COMMAND="fd --type f"
-  . ${HOMEBREW}/opt/fzf/shell/completion.zsh 2>/dev/null
-  . ${HOMEBREW}/opt/fzf/shell/key-bindings.zsh 2>/dev/null
+  if [ -d "${HOMEBREW}"/opt/fzf/shell ] ; then
+    . "${HOMEBREW}"/opt/fzf/shell/completion.zsh 2>/dev/null
+    . "${HOMEBREW}"/opt/fzf/shell/key-bindings.zsh 2>/dev/null
+  elif [ -d /usr/share/fzf ] ; then
+    . /usr/share/fzf/completion.zsh 2>/dev/null
+    . /usr/share/fzf/key-bindings.zsh 2>/dev/null
+  fi
 
 # prompt
-  SPACESHIP_PROMPT_ORDER=(dir git line_sep jobs char)
+  case $OSTYPE in
+    linux*) SPACESHIP_PROMPT_ORDER=(host dir git line_sep jobs char) ;;
+    *)      SPACESHIP_PROMPT_ORDER=(     dir git line_sep jobs char) ;;
+  esac
   SPACESHIP_PROMPT_PREFIXES_SHOW=false
   SPACESHIP_CHAR_SYMBOL="❯ " SPACESHIP_GIT_SYMBOL=""
   SPACESHIP_DIR_COLOR="blue" SPACESHIP_GIT_BRANCH_COLOR="gray"
