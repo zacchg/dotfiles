@@ -80,10 +80,10 @@
   SPACESHIP_CHAR_SYMBOL="❯ " SPACESHIP_GIT_SYMBOL=""
   SPACESHIP_DIR_COLOR="blue" SPACESHIP_GIT_BRANCH_COLOR="gray"
   SPACESHIP_CHAR_COLOR_SUCCESS="239"
-  RPS1='' # fix ctrl+c error message from spaceship
   PS1='%1~ $ '
 
   if (($SHLVL <= 1)) ; then prompt spaceship ; fi
+  RPS1='' # fix ctrl+c error message from spaceship
 
 # shell includes
   [ -f ~/.zshincludes ] && . ~/.zshincludes
