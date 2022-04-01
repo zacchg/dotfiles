@@ -1,0 +1,8 @@
+# mac
+.DS_Store
+
+# vim
+.sw*
+'
+"
+:wq

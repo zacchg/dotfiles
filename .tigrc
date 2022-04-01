@@ -1,0 +1,9 @@
+set history-size = 0
+
+# formatting of git log columns
+set main-view-author-width = 7
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d %H:%M"
+
+# expand commit diff pane to 75%
+set split-view-width = 75%

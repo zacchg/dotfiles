@@ -1,0 +1,74 @@
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	hooksPath = /dev/null
+
+[init]
+	defaultBranch = main
+	templateDir = /dev/null
+
+[fetch]
+	prune = true
+
+[log]
+	date = local
+
+[alias]
+	a = add
+	br = branch
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	d = diff
+	ds = diff --staged
+	p = push
+	re = rebase
+	rec = rebase --continue
+	s = status
+	st = status -uno --porcelain
+	t = tag
+
+	add-to-index = update-index --skip-worktree
+	remove-from-index = update-index --no-skip-worktree
+
+	last = log --format=fuller --name-status HEAD^..HEAD
+	l = log --graph --abbrev-commit --date=relative \
+		--format=format:'%C(red)%h%C(reset) %C(yellow)%d%C(reset) %s  %C(green)%cd%C(reset)  <%C(blue)%an%C(reset)>'
+	ll = log --graph --abbrev-commit --format=fuller
+
+	rebase-onto = ! \
+		TZ=UTC \
+		CO_TIMESTAMP=$(date -u +%c) \
+		GIT_AUTHOR_DATE="${CO_TIMESTAMP}" \
+		GIT_AUTHOR_NAME=$(git config --get user.name) \
+		GIT_AUTHOR_EMAIL=$(git config --get user.email) \
+		GIT_COMMITTER_DATE="${CO_TIMESTAMP}" \
+		GIT_COMMITTER_NAME=$(git config --get user.name) \
+		GIT_COMMITTER_EMAIL=$(git config --get user.email) \
+			git rebase \
+				--interactive \
+				--rebase-merges \
+				--reset-author-date \
+				--committer-date-is-author-date \
+				--exec 'git commit --amend --no-edit'
+		# append branch name to the command
+
+[diff]
+	noprefix = true
+
+[advice]
+	statusHints = off
+
+[color]
+	ui = auto
+
+[color "status"]
+	untracked = 10 # light theme
+	untracked = 237 # dark theme
+
+[credential]
+	helper = cache
+
+[user]
+	name = unknown
+	email = user@example.com
