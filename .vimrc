@@ -18,9 +18,10 @@
 
 " indent
   filetype plugin indent on
-  autocmd Filetype sh,zsh,vim,text setlocal et ts=2 sw=2 sts=2
-  autocmd Filetype go setlocal noet ts=4 sw=4 sts=4
-  autocmd BufNewFile,BufRead *  setlocal formatoptions-=cro " don't continue comment on the next line
+  autocmd Filetype sh,zsh,vim  setlocal et ts=2 sw=2 sts=2
+  autocmd Filetype text        setlocal et ts=2 sw=2 sts=2
+  autocmd Filetype go          setlocal noet ts=4 sw=4 sts=4
+  autocmd BufNewFile,BufRead * setlocal formatoptions-=cro " don't continue comment on the next line
 
 " theme
   set background=light | if strftime('%H') < 8 || strftime('%H') > 17 | set background=dark | endif
@@ -30,6 +31,7 @@
   try | colorscheme paramount | catch | endtry
 
 " layout, formatting, search
+  set encoding=utf-8 fileencoding=utf-8
   set backspace=indent,eol,start     " backspace through everything
   set scrolloff=5                    " show the following 5 lines while scrolling
   set nojoinspaces                   " one space on shift+j
