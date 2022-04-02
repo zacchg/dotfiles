@@ -18,7 +18,7 @@
 
 " indent
   filetype plugin indent on
-  autocmd Filetype sh,zsh,vim setlocal et ts=2 sw=2 sts=2
+  autocmd Filetype sh,zsh,vim,text setlocal et ts=2 sw=2 sts=2
   autocmd Filetype go setlocal noet ts=4 sw=4 sts=4
   autocmd BufNewFile,BufRead *  setlocal formatoptions-=cro " don't continue comment on the next line
 
