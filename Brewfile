@@ -66,7 +66,6 @@ mas "iMovie", id: 408981434
 
 # system
 mas "AdGuard for Safari", id: 1440147259
-mas "Hush", id: 1544743900
 mas "WireGuard", id: 1451685025
 
 # apps
@@ -83,4 +82,5 @@ mas "Byword", id: 420212497
 mas "Tweetbot", id: 1384080005
 mas "Reeder", id: 1529448980
 mas "GoodLinks", id: 1474335294
+mas "Noir", id: 1592917505
 mas "Vinegar", id: 1591303229
