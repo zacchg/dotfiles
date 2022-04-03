@@ -14,7 +14,6 @@ brew "fzf"
 brew "tree"
 brew "jq"
 brew "watch"
-brew "pwgen"
 brew "wireguard-go"
 brew "wireguard-tools"
 
