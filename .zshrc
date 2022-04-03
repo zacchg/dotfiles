@@ -2,11 +2,12 @@
 
 # paths
   HOMEBREW="/opt/homebrew"
-  export PATH="${HOMEBREW}/bin:${HOMEBREW}/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
   export XDG_CONFIG_HOME="$HOME/.config"
   export XDG_CACHE_HOME="$HOME/.cache"
   export XDG_DATA_HOME="$HOME/.local/share"
   export XDG_RUNTIME_DIR="$HOME/.local/run"
+  export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+  [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/bin:${HOMEBREW}/sbin:$PATH"
 
 # language paths
   export GOPATH="/opt/go"
@@ -17,6 +18,7 @@
   export GEM_SPEC_CACHE="${GEM_PATH}/specs"
 
 # environment variables
+  export LANG="en_US.UTF-8"
   export EDITOR="vim"
   export VIMINIT='let $MYVIMRC="$HOME/.vimrc" | source $MYVIMRC'
   export LESSHISTFILE="/dev/null"
@@ -80,8 +82,8 @@
   SPACESHIP_CHAR_SYMBOL="❯ " SPACESHIP_GIT_SYMBOL=""
   SPACESHIP_DIR_COLOR="blue" SPACESHIP_GIT_BRANCH_COLOR="gray"
   SPACESHIP_CHAR_COLOR_SUCCESS="239"
-  PS1='%1~ $ '
 
+  PS1='%1~ $ '
   if (($SHLVL <= 1)) ; then prompt spaceship ; fi
   RPS1='' # fix ctrl+c error message from spaceship
 
@@ -89,8 +91,11 @@
   [ -f ~/.zshincludes ] && . ~/.zshincludes
 
 # reset path
-  export PATH="${HOMEBREW}/bin:${HOMEBREW}/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
-  export PATH="${HOMEBREW}/opt/ruby/bin:${PATH}:${GOPATH}/bin"
+  export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+  [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/bin:${HOMEBREW}/sbin:$PATH"
+  [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/opt/ruby/bin:$PATH"
+  export PATH="$PATH:${GOPATH}/bin"
+  export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
 
 # unset environment variables
   unset HOMEBREW SPACESHIP_ROOT SPACESHIP_VERSION
