@@ -87,15 +87,15 @@
   if (($SHLVL <= 1)) ; then prompt spaceship ; fi
   RPS1='' # fix ctrl+c error message from spaceship
 
-# shell includes
-  [ -f ~/.zshincludes ] && . ~/.zshincludes
-
 # reset path
   export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
   [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/bin:${HOMEBREW}/sbin:$PATH"
   [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/opt/ruby/bin:$PATH"
   export PATH="$PATH:${GOPATH}/bin"
   export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
+
+# shell includes
+  [ -f ~/.zshincludes ] && . ~/.zshincludes
 
 # unset environment variables
   unset HOMEBREW SPACESHIP_ROOT SPACESHIP_VERSION
