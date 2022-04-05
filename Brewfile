@@ -27,8 +27,7 @@ brew "tig"
 # languages
 brew "go"
 brew "gopls"
-brew "ruby"
-brew "node"
+brew "ruby-install"
 brew "python@3.9"
 
 # cli apps

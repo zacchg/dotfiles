@@ -2,25 +2,27 @@
 
 # paths
   HOMEBREW="/opt/homebrew"
+  export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
   export XDG_CONFIG_HOME="$HOME/.config"
   export XDG_CACHE_HOME="$HOME/.cache"
   export XDG_DATA_HOME="$HOME/.local/share"
   export XDG_RUNTIME_DIR="$HOME/.local/run"
-  export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-  [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/bin:${HOMEBREW}/sbin:$PATH"
 
 # language paths
-  export GOPATH="/opt/go"
-  export NODE_PATH="/opt/npm"
-  export BUNDLE_USER_HOME="/opt/ruby/bundle"
-  export GEM_HOME="/opt/ruby/gem"
+  export GOPATH="$HOME/go"
+  export RUBIES_PATH="$HOME/.local/ruby/rubies"
+  export BUNDLE_USER_HOME="$HOME/.local/ruby/bundle"
+  export GEM_HOME="$HOME/.local/ruby/gem"
   export GEM_PATH="${GEM_HOME}"
   export GEM_SPEC_CACHE="${GEM_PATH}/specs"
+  export N_PREFIX="$HOME/.local/n"
+  export NODE_PATH="$HOME/.local/npm"
 
 # environment variables
   export LANG="en_US.UTF-8"
   export EDITOR="vim"
   export VIMINIT='let $MYVIMRC="$HOME/.vimrc" | source $MYVIMRC'
+  export FZF_DEFAULT_COMMAND="fd --type f"
   export LESSHISTFILE="/dev/null"
   export HOMEBREW_NO_ANALYTICS=1
 
@@ -55,22 +57,21 @@
   alias t...="t -L 3"
 
 # command aliases
-  alias vim="nvim"
+  alias vim="\nvim"
   alias git="TZ=UTC \git"
   alias g="git"
   alias diff="\colordiff"
   alias curl="noglob \curl --silent --show-error"
   alias be="bundle exec"
-  alias tm="date +%Y%m%d-%H%M%S" # timestamp -> 20210724-022731
+  alias tm="\date +%Y%m%d-%H%M%S" # timestamp -> 20210724-022731
 
 # fuzzy finder
-  command -v fd >/dev/null && export FZF_DEFAULT_COMMAND="fd --type f"
-  if [ -d "${HOMEBREW}"/opt/fzf/shell ] ; then
-    . "${HOMEBREW}"/opt/fzf/shell/completion.zsh 2>/dev/null
-    . "${HOMEBREW}"/opt/fzf/shell/key-bindings.zsh 2>/dev/null
-  elif [ -d /usr/share/fzf ] ; then
+  if [ -d /usr/share/fzf ] ; then
     . /usr/share/fzf/completion.zsh 2>/dev/null
     . /usr/share/fzf/key-bindings.zsh 2>/dev/null
+  elif [ -d "${HOMEBREW}"/opt/fzf/shell ] ; then
+    . "${HOMEBREW}"/opt/fzf/shell/completion.zsh 2>/dev/null
+    . "${HOMEBREW}"/opt/fzf/shell/key-bindings.zsh 2>/dev/null
   fi
 
 # prompt
@@ -84,14 +85,21 @@
   SPACESHIP_CHAR_COLOR_SUCCESS="239"
 
   PS1='%1~ $ '
-  if (($SHLVL <= 1)) ; then prompt spaceship ; fi
+  (($SHLVL <= 1)) && prompt spaceship
   RPS1='' # fix ctrl+c error message from spaceship
 
-# reset path
+# path
   export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+  # homebrew
   [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/bin:${HOMEBREW}/sbin:$PATH"
-  [ -d "${HOMEBREW}" ] && export PATH="${HOMEBREW}/opt/ruby/bin:$PATH"
+  # node
+  export PATH="${N_PREFIX}/bin:$PATH"
+  # go
   export PATH="$PATH:${GOPATH}/bin"
+  # ruby
+  _ruby_dir=$(find "${RUBIES_PATH}" -maxdepth 1 -type d 2>/dev/null | tail -n1)
+  [ ! -z "${_ruby_dir}" ] && export PATH="${_ruby_dir}/bin:$PATH"
+  # nix
   export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
 
 # shell includes

@@ -14,15 +14,7 @@
    cd dotfiles
    ```
 
-3. Install MacOS packages
-
-    ```sh
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    brew bundle install --file Brewfile
-    ```
-
-4. Link files into place
+3. Link files into place
 
     ```sh
     ln -s "$(pwd -P)"/.zshrc ~/.zshrc
@@ -36,13 +28,12 @@
     ln -s "$(pwd -P)"/.psqlrc ~/.psqlrc
     ```
 
-5. Create go, ruby, node directories
+4. Install MacOS packages
 
     ```sh
-    sudo install -d -m 0700 -o $USER /opt/go /opt/ruby /opt/node
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    gem update --system
-    gem update
+    brew bundle install --file Brewfile
     ```
 
 ## Files
