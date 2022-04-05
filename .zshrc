@@ -18,6 +18,10 @@
   export N_PREFIX="$HOME/.local/n"
   export NODE_PATH="$HOME/.local/npm"
 
+# git overrides
+  [ -f "$HOME/.gitconfig_global" ] && \
+    export GIT_CONFIG_GLOBAL="$HOME/.gitconfig_global"
+
 # environment variables
   export LANG="en_US.UTF-8"
   export EDITOR="vim"
