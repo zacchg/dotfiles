@@ -55,6 +55,7 @@ cask "imazing"
 brew "mas"
 
 # apple
+mas "TestFlight", id: 899247664
 mas "Xcode", id: 497799835
 mas "Developer", id: 640199958
 mas "Keynote", id: 409183694
