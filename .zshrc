@@ -101,7 +101,7 @@
   # go
   export PATH="$PATH:${GOPATH}/bin"
   # ruby
-  _ruby_dir=$(find "${RUBIES_PATH}" -maxdepth 1 -type d 2>/dev/null | tail -n1)
+  _ruby_dir=$(find "${RUBIES_PATH}" -maxdepth 1 -type d 2>/dev/null | sort | tail -n1)
   [ ! -z "${_ruby_dir}" ] && export PATH="${_ruby_dir}/bin:$PATH"
   # nix
   export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
