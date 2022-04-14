@@ -39,6 +39,7 @@ brew "tarsnap"
 # menubar apps
 cask "rectangle"
 cask "hiddenbar"
+cask "alt-tab"
 cask "maccy"
 cask "monitorcontrol"
 
