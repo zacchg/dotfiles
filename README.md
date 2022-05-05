@@ -36,7 +36,7 @@
     brew bundle install --file Brewfile
     ```
 
-## Files
+## Config files
 
 ```yaml
 .
@@ -48,6 +48,5 @@
 ├── .psqlrc
 ├── .tigrc
 ├── .vimrc
-├── .zshrc
-└── Brewfile
+└── .zshrc
 ```
