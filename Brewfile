@@ -47,6 +47,7 @@ cask "monitorcontrol"
 cask "firefox"
 cask "visual-studio-code"
 cask "zoom"
+cask "spotify"
 
 # paid
 cask "imazing"
