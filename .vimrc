@@ -27,9 +27,11 @@
   set background=light | if strftime('%H') < 8 || strftime('%H') > 17 | set background=dark | endif
   if &background ==? 'dark'
     autocmd colorscheme paramount highlight Normal ctermbg=8
-    try | colorscheme paramount | catch | endtry
+    " try | colorscheme paramount | catch | endtry
+    try | colorscheme yin | catch | endtry
   else
-    try | colorscheme yang | catch | endtry
+    " try | colorscheme yang | catch | endtry
+    try | colorscheme yui | catch | endtry
   endif
 
 " layout, formatting, search
