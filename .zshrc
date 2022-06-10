@@ -80,13 +80,14 @@
 
 # prompt
   case $OSTYPE in
-    linux*) SPACESHIP_PROMPT_ORDER=(host dir git line_sep jobs char) ;;
-    *)      SPACESHIP_PROMPT_ORDER=(     dir git line_sep jobs char) ;;
+    linux*) SPACESHIP_HOST_SHOW="always" ;;
   esac
-  SPACESHIP_PROMPT_PREFIXES_SHOW=false
-  SPACESHIP_CHAR_SYMBOL="❯ " SPACESHIP_GIT_SYMBOL=""
-  SPACESHIP_DIR_COLOR="blue" SPACESHIP_GIT_BRANCH_COLOR="gray"
-  SPACESHIP_CHAR_COLOR_SUCCESS="239"
+  SPACESHIP_PROMPT_ORDER=(time jobs dir git_branch host line_sep line_sep char)
+  SPACESHIP_PROMPT_PREFIXES_SHOW=false SPACESHIP_GIT_BRANCH_SUFFIX=""
+  SPACESHIP_TIME_SHOW=true SPACESHIP_TIME_FORMAT="↓" SPACESHIP_TIME_COLOR="gray"
+  SPACESHIP_CHAR_SYMBOL="" SPACESHIP_CHAR_COLOR_SUCCESS="239"
+  SPACESHIP_GIT_SYMBOL="" SPACESHIP_GIT_BRANCH_COLOR="gray"
+  SPACESHIP_DIR_COLOR="blue"
 
   PS1='%1~ $ '
   (($SHLVL <= 1)) && prompt spaceship
