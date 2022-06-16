@@ -66,7 +66,6 @@ mas "Pages", id: 409201541
 mas "iMovie", id: 408981434
 
 # system
-mas "AdGuard for Safari", id: 1440147259
 mas "WireGuard", id: 1451685025
 
 # apps
@@ -79,7 +78,7 @@ mas "UTM", id: 1538878817
 mas "Journey", id: 1455378681
 mas "Acorn", id: 1547371478
 mas "Monodraw", id: 920404675
-mas "Byword", id: 420212497
+mas "iWriter Pro", id: 893199093
 mas "Tweetbot", id: 1384080005
 mas "Reeder", id: 1529448980
 mas "GoodLinks", id: 1474335294
