@@ -74,9 +74,7 @@
 # fuzzy finder
   export FZF_DEFAULT_OPTS="--no-info --reverse --color='fg:14,fg+:15,bg:234,pointer:15'"
   export FZF_CTRL_T_COMMAND="fd --hidden --ignore --type=f"
-  for _d in "/usr/share/fzf" "/opt/homebrew/opt/fzf/shell" ; do
-    if [ -d "$_d" ] ; then for _f in "$_d"/*.zsh ; do . $_f ; done ; break ; fi
-  done
+  eval "$(fzf --zsh)"
 
 # file permissions
   umask 077 # scope permissions of new files to only this user
