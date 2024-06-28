@@ -23,8 +23,9 @@
 # command aliases
   alias {vim,nvim}="nvim -i NONE"
   alias {git,g}="TZ=UTC git"
-  alias diff="diff --color=always"
+  alias diff="colordiff"
   alias curl="curl --silent --show-error"
+  alias ugrep="ugrep --ignore-files --smart-case"
   alias t="tree -C -a --dirsfirst -I .DS_Store -L 1"
   alias ll="eza -lA --group-directories-first --time-style=long-iso"
   alias tm="date +%Y%m%d-%H%M%S" # timestamp > 20210724-022731
@@ -49,6 +50,7 @@
   precmd() {
     # save appearance dark/light mode for app theming
     export MACOS_APPEARANCE=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+    [[ "$OSTYPE" != "darwin"* ]] && export MACOS_APPEARANCE="dark"
 
     # display hostname, directory, and vcs branch in the prompt
     vcs_info ; local branch="${vcs_info_msg_0_}"
@@ -61,7 +63,7 @@
     [[ $PWD =~ "^$HOME/Projects/([^/]+)/([^/]+)" ]] && local f="-${match[1]}-${match[2]}"
     if [[ $HISTFILE != ~/.cache/zsh/"history${f}" ]] ; then
       HISTSIZE=0    SAVEHIST=0    fc -p # clear history
-      HISTSIZE=1000 SAVEHIST=1000 HISTFILE=~/.cache/zsh/"history${f}"
+      HISTSIZE=10000 SAVEHIST=10000 HISTFILE=~/.cache/zsh/"history${f}"
       fc -R # import history
     fi
 
