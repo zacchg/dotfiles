@@ -7,6 +7,8 @@ brew "git"
 brew "tree"
 brew "rsync"
 brew "jq"
+brew "tig"
+brew "colordiff"
 brew "ugrep"
 brew "eza"
 brew "fd"
@@ -30,7 +32,6 @@ cask "maccy"
 # development
 cask "utm"
 cask "zed"
-cask "vscodium"
 
 # app store ##########################################################
 
