@@ -48,9 +48,15 @@
 
 # zsh precmd
   precmd() {
-    # save appearance dark/light mode for app theming
-    export MACOS_APPEARANCE=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
-    [[ "$OSTYPE" != "darwin"* ]] && export MACOS_APPEARANCE="dark"
+    # save dark/light appearance mode for app theming
+    export APPEARANCE="light"
+    if [[ "$OSTYPE" = "darwin"* ]] ; then
+      if [[ "Dark" = $(defaults read -g AppleInterfaceStyle 2>/dev/null) ]] ; then
+        export APPEARANCE="dark"
+      fi
+    elif [[ $(date +%H) =~ "^(0[1-8]|19|2.)$" ]] ; then
+      export APPEARANCE="dark"
+    fi
 
     # display hostname, directory, and vcs branch in the prompt
     vcs_info ; local branch="${vcs_info_msg_0_}"
@@ -74,7 +80,10 @@
   }
 
 # fuzzy finder
-  export FZF_DEFAULT_OPTS="--no-info --reverse --color='fg:14,fg+:15,bg:234,pointer:15'"
+  export FZF_DEFAULT_OPTS="--no-info --reverse"
+  if [[ $APPEARANCE = "dark" ]] ; then
+    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color='fg:14,fg+:15,bg:234,pointer:15'"
+  fi
   export FZF_CTRL_T_COMMAND="fd --hidden --ignore --type=f"
   eval "$(fzf --zsh)"
 

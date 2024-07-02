@@ -15,11 +15,14 @@
   set runtimepath=$CONFIG_DIR/runtime,$VIMRUNTIME
 
 " theme
-  let &background = ($MACOS_APPEARANCE ==? 'Dark' ? 'dark' : 'light')
-  try | colorscheme Mies | catch | endtry
-  if &background ==# 'dark'
-    let g:sonokai_disable_italic_comment=1 | try | colorscheme sonokai | catch | endtry
-  endif
+  let &background = ($APPEARANCE ==? 'dark' ? 'dark' : 'light')
+  try | if &background ==# 'dark'
+    "let g:sonokai_disable_italic_comment=1 | colorscheme sonokai
+    colorscheme yin
+  else
+    "colorscheme yang
+    colorscheme Mies
+  endif | catch | endtry
 
 " indentation
   filetype plugin indent on
