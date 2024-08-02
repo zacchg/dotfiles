@@ -17,7 +17,6 @@ brew "fzf"
 # development
 brew "neovim"
 brew "go"
-brew "zig"
 
 # gui ################################################################
 
@@ -28,10 +27,7 @@ cask "slack"
 cask "zoom"
 cask "rectangle"
 cask "maccy"
-
-# development
 cask "utm"
-cask "zed"
 
 # app store ##########################################################
 
@@ -53,7 +49,6 @@ mas "WireGuard", id: 1451685025
 mas "Reeder", id: 1529448980
 mas "Spect", id: 1409975750
 mas "Simpletext", id: 1319340670
-mas "GoodLinks", id: 1474335294
 
 # chat
 mas "WhatsApp", id: 310633997
