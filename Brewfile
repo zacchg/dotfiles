@@ -18,6 +18,9 @@ brew "fzf"
 brew "neovim"
 brew "go"
 
+# applications
+brew "restic"
+
 # gui ################################################################
 
 # applications
