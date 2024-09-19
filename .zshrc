@@ -62,7 +62,7 @@
     vcs_info ; local branch="${vcs_info_msg_0_}"
     [ ! -z "${branch}" ] && local vcs="%F{reset} %F{14}• ${branch}"
     [[ "$OSTYPE" != "darwin"* ]] && local host="%F{green}%m %F{14}• "
-    print -rP $'\n'"${host}%F{blue}%1~${vcs}%F{reset}"$'\n'
+    print -rP $'\n'"${host}%F{blue}%1~${vcs}%F{reset}"
 
     # import main, project-scoped, or volume-scoped zsh history
     [[ $PWD =~ "^/(Volumes|mnt)/([^/]+)" ]] && local f="-${match[2]}"
