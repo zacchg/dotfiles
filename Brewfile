@@ -25,7 +25,6 @@ brew "restic"
 
 # applications
 cask "firefox"
-cask "iina"
 cask "slack"
 cask "zoom"
 cask "rectangle"
