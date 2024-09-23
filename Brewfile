@@ -1,6 +1,6 @@
 tap "homebrew/bundle"
 
-# cli ################################################################
+# cli #########################################
 
 # commands
 brew "git"
@@ -18,10 +18,12 @@ brew "fzf"
 brew "neovim"
 brew "go"
 
-# applications
+# system
 brew "restic"
+brew "lima"
+brew "blocky"
 
-# gui ################################################################
+# gui ##########################################
 
 # applications
 cask "firefox"
@@ -31,7 +33,7 @@ cask "rectangle"
 cask "maccy"
 cask "utm"
 
-# app store ##########################################################
+# app store ####################################
 
 brew "mas"
 
@@ -48,12 +50,8 @@ mas "iMovie", id: 408981434
 mas "WireGuard", id: 1451685025
 
 # paid
-mas "Reeder", id: 1529448980
 mas "Spect", id: 1409975750
 mas "Simpletext", id: 1319340670
-
-# chat
-mas "WhatsApp", id: 310633997
 
 # safari
 mas "Wipr", id: 1320666476
