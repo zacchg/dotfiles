@@ -1,12 +1,12 @@
 " unset vim settings
-  set nocompatible noautoread hidden nobackup writebackup undofile viminfo='100,f0,<10000,s10000,:100,h
+  set nocompatible noautoread hidden nobackup writebackup undofile viminfo='100,f0,<1000,s100,:100,h
   let g:loaded_netrw=1 | let g:loaded_netrwPlugin=1
   autocmd! | " remove all autocmds
 
 " configure paths
   let CreateDir = { _dir -> !isdirectory(_dir) && mkdir(_dir, 'p') }
-  let $CACHE_DIR=expand('~/.cache/' . (has('nvim') ? 'nvim' : 'vim'))
-  let $CONFIG_DIR=expand('~/.config/' . (has('nvim') ? 'nvim' : 'vim'))
+  let $CACHE_DIR=expand('~/.cache/vim')
+  let $CONFIG_DIR=expand('~/.config/vim')
   set viminfofile=$CACHE_DIR/viminfo | call CreateDir($CACHE_DIR)
   set   directory=$CACHE_DIR/swp     | call CreateDir(&directory)
   set   backupdir=$CACHE_DIR/backup  | call CreateDir(&backupdir)
@@ -41,7 +41,6 @@
   set wildmenu wildmode=longest:full,full completeopt=menu,preview " completion
   set noshowcmd showtabline=2 laststatus=0 statusline=%f%=%c\ %l/%L\ " | " status line
   set timeoutlen=500                  " key combo timeout
-  if has('nvim') | set mouse= | endif " disable mouse menu, allow mouse scrolling
 
 " save and restore functions
   " forbid invalid filenames

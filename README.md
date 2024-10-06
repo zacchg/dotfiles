@@ -19,25 +19,25 @@
     Link the files into place
 
     ```sh
-    mkdir -p ~/.config/git/
-    ln -s "$(pwd -P)"/.config/git/config ~/.config/git/config
-    ln -s "$(pwd -P)"/.config/git/ignore ~/.config/git/ignore
-    ln -s "$(pwd -P)"/.psqlrc            ~/.psqlrc
-    ln -s "$(pwd -P)"/.vimrc             ~/.vimrc
-    ln -s "$(pwd -P)"/.zshenv            ~/.zshenv
-    ln -s "$(pwd -P)"/.zshrc             ~/.zshrc
+    mkdir -p ~/.config/{git,nvim}/
+    ln -s "$(pwd -P)"/.config/git/*  ~/.config/git/
+    ln -s "$(pwd -P)"/.config/nvim/* ~/.config/nvim/
+    ln -s "$(pwd -P)"/.psqlrc        ~/.psqlrc
+    ln -s "$(pwd -P)"/.vimrc         ~/.vimrc
+    ln -s "$(pwd -P)"/.zshenv        ~/.zshenv
+    ln -s "$(pwd -P)"/.zshrc         ~/.zshrc
     ```
 
     Or copy the files into place
 
     ```sh
-    mkdir -p ~/.config/git/
-    cp -v "$(pwd -P)"/.config/git/config ~/.config/git/config
-    cp -v "$(pwd -P)"/.config/git/ignore ~/.config/git/ignore
-    cp -v "$(pwd -P)"/.psqlrc            ~/.psqlrc
-    cp -v "$(pwd -P)"/.vimrc             ~/.vimrc
-    cp -v "$(pwd -P)"/.zshenv            ~/.zshenv
-    cp -v "$(pwd -P)"/.zshrc             ~/.zshrc
+    mkdir -p ~/.config/{git,nvim}/
+    cp -v "$(pwd -P)"/.config/git/*  ~/.config/git/
+    cp -v "$(pwd -P)"/.config/nvim/* ~/.config/nvim/
+    cp -v "$(pwd -P)"/.psqlrc        ~/.psqlrc
+    cp -v "$(pwd -P)"/.vimrc         ~/.vimrc
+    cp -v "$(pwd -P)"/.zshenv        ~/.zshenv
+    cp -v "$(pwd -P)"/.zshrc         ~/.zshrc
     ```
 
 4. Install macOS packages
@@ -53,9 +53,11 @@
 ```yaml
 .
 ├── .config/
-│   └── git/
-│       ├── config
-│       └── ignore
+│   ├── git/
+│   │   ├── config
+│   │   └── ignore
+│   └── nvim/
+│       └── init.lua
 ├── .psqlrc
 ├── .vimrc
 ├── .zshenv

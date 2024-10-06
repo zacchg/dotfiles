@@ -15,13 +15,12 @@
 # environment variables
   export LANG="en_US.UTF-8"
   export EDITOR="nvim"
-  export VIMINIT='let $MYVIMRC="$HOME/.vimrc" | source $MYVIMRC'
   export NVIM_LOG_FILE="/dev/null"
   export NVIM_RPLUGIN_MANIFEST="/dev/null"
   export LESSHISTFILE="/dev/null"
 
 # command aliases
-  alias {vim,nvim}="nvim -i NONE"
+  alias {vi,vim}="nvim"
   alias {git,g}="TZ=UTC git"
   alias diff="colordiff"
   alias curl="curl --silent --show-error"
