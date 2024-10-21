@@ -16,24 +16,13 @@
 
 3. Place the configurations files in $HOME
 
-    Link the files into place
+    Copy the files into place
 
     ```sh
-    mkdir -p ~/.config/{git,nvim}/
-    ln -s "$(pwd -P)"/.config/git/*  ~/.config/git/
-    ln -s "$(pwd -P)"/.config/nvim/* ~/.config/nvim/
-    ln -s "$(pwd -P)"/.psqlrc        ~/.psqlrc
-    ln -s "$(pwd -P)"/.vimrc         ~/.vimrc
-    ln -s "$(pwd -P)"/.zshenv        ~/.zshenv
-    ln -s "$(pwd -P)"/.zshrc         ~/.zshrc
-    ```
-
-    Or copy the files into place
-
-    ```sh
-    mkdir -p ~/.config/{git,nvim}/
+    mkdir -p ~/.config/{git,nvim,rio}/
     cp -v "$(pwd -P)"/.config/git/*  ~/.config/git/
     cp -v "$(pwd -P)"/.config/nvim/* ~/.config/nvim/
+    cp -v "$(pwd -P)"/.config/rio/*  ~/.config/rio/
     cp -v "$(pwd -P)"/.psqlrc        ~/.psqlrc
     cp -v "$(pwd -P)"/.vimrc         ~/.vimrc
     cp -v "$(pwd -P)"/.zshenv        ~/.zshenv
@@ -56,8 +45,12 @@
 │   ├── git/
 │   │   ├── config
 │   │   └── ignore
-│   └── nvim/
-│       └── init.lua
+│   ├── nvim/
+│   │   └── init.lua
+│   └── rio/
+│       ├── config.toml
+│       └── themes/
+│           └── *.toml
 ├── .psqlrc
 ├── .vimrc
 ├── .zshenv

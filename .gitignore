@@ -20,6 +20,10 @@
 !.vimrc
 !.config/nvim/init.lua
 
+# rio
+!.config/rio/config.toml
+!.config/rio/themes/*.toml
+
 # git
 !.config/git/config
 !.config/git/ignore

@@ -8,6 +8,6 @@ tree:
 
 overwrite-dotfiles-here:
 	@echo "overwrite-dotfiles-here"
-	@for f in $$(grep '^!\.' .gitignore | sed 's/!//g') ; do [ "$$f" = ".gitignore" ] && continue ; cp -v ~/"$$f" ./$$f ; done
+	@for f in $$(grep '^!\.' .gitignore | sed 's/!//g') ; do [ "$$f" = ".gitignore" ] && continue ; cp -v -a ~/"$$f" ./"$$f" ; done
 
 .PHONY:

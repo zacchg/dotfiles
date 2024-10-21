@@ -1,0 +1,26 @@
+[colors]
+background = "#1f1f1f"
+foreground = "#f9f9f9"
+cursor     = "#7f7f7f"
+
+selection-background = "#2a8fcf"
+selection-foreground = "#1f1f1f"
+
+black = "#606060"
+#red = "#f90000"
+red = "#f9594f"
+green = "#9fcf20"
+yellow = "#df9f00"
+blue = "#7fc9f9"
+magenta = "#7f7fef"
+cyan = "#9fefcf"
+white = "#ffffff"
+
+light-black = "#7f7f7f"
+light-red = "#f9594f"
+light-green = "#7faf00"
+light-yellow = "#dfa900"
+light-blue = "#59aff9"
+light-magenta = "#af69cf"
+light-cyan = "#9fefcf"
+light-white = "#ffffff"

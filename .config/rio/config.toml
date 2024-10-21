@@ -1,0 +1,32 @@
+theme = "dark"
+padding-x = 10
+padding-y = [10, 10]
+#line-height = 1.25
+
+use-fork = false
+
+[adaptive-theme]
+  light = "light"
+  dark = "dark"
+
+[window]
+  decorations = "Enabled"
+
+[fonts]
+  family = "SF Mono"
+  style = "Normal"
+  size = 14.5
+[fonts.regular]
+  weight = 500
+[fonts.bold]
+[fonts.italic]
+[fonts.bold-italic]
+[fonts.emoji]
+  family = "Apple Color Emoji"
+
+[navigation]
+  use-current-path = true
+
+[shell]
+  program = "/bin/zsh"
+  args = ["--interactive", "--no-login"]
