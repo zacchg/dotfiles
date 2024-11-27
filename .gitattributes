@@ -1,0 +1,17 @@
+# zsh
+.zshenv linguist-language=zsh
+.zshrc linguist-language=zsh
+
+# vim
+.vimrc linguist-language=vim
+.config/nvim/init.lua linguist-language=lua
+
+# git
+.config/git/config linguist-language=gitconfig
+.config/git/ignore linguist-language=gitignore
+
+# postgres
+.psqlrc linguist-language=pgsql
+
+# mac
+Brewfile linguist-language=ruby
