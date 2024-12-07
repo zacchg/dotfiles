@@ -27,8 +27,8 @@ brew "blocky"
 # applications
 cask "rectangle"
 cask "maccy"
+cask "jordanbaird-ice"
 cask "firefox"
-cask "zoom"
 cask "vscodium"
 
 # app store ####################################
@@ -48,11 +48,14 @@ mas "iMovie", id: 408981434
 mas "WireGuard", id: 1451685025
 
 # paid
+mas "Reeder", id: 1529448980
 mas "Spect", id: 1409975750
 mas "Simpletext", id: 1319340670
 
 # apps
+mas "Acorn", id: 6737921844
 mas "WhatsApp", id: 310633997
 
 # safari
+mas "Wipr", id: 1662217862
 mas "Vinegar", id: 1591303229
