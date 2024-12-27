@@ -1,0 +1,13 @@
+shell-integration-features = no-title,no-cursor
+cursor-style = bar
+cursor-style-blink = false
+
+window-padding-x = 6
+window-padding-y = 7
+
+font-family = SF Mono
+font-style = Regular
+font-size = 14
+adjust-cell-height = 20%
+
+theme = dark:custom-dark,light:custom-light
