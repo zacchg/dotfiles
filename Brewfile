@@ -26,7 +26,9 @@ brew "blocky"
 # gui ##########################################
 
 # applications
+cask "ghostty"
 cask "utm"
+cask "ollama"
 cask "firefox"
 cask "vscodium"
 cask "zed"
@@ -56,4 +58,5 @@ mas "Simpletext", id: 1319340670
 mas "WhatsApp", id: 310633997
 
 # safari
+mas "Wipr", id: 1662217862
 mas "Vinegar", id: 1591303229
