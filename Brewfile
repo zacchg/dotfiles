@@ -30,6 +30,7 @@ cask "maccy"
 cask "jordanbaird-ice"
 cask "firefox"
 cask "vscodium"
+cask "ghostty"
 
 # app store ####################################
 
