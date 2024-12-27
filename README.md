@@ -5,6 +5,11 @@
 ```yaml
 .
 ├── .config/
+│   ├── ghostty/
+│   │   ├── config
+│   │   └── themes/
+│   │       ├── custom-dark
+│   │       └── custom-light
 │   ├── git/
 │   │   ├── config
 │   │   └── ignore
@@ -33,8 +38,9 @@
 3. Place the configuration files in $HOME
 
     ```sh
-    mkdir -p ~/.config/{git,nvim}/
+    mkdir -p ~/.config/{ghostty,git,nvim}/
 
+    cp -v .config/ghostty/*     ~/.config/ghostty/
     cp -v .config/git/config    ~/.config/git/config
     cp -v .config/git/ignore    ~/.config/git/ignore
     cp -v .config/nvim/init.lua ~/.config/nvim/init.lua

@@ -28,5 +28,10 @@
 # postgres
 !.psqlrc
 
+# ghostty
+!.config/ghostty/config
+!.config/ghostty/themes/custom-dark
+!.config/ghostty/themes/custom-light
+
 # mac
 !Brewfile

@@ -1,0 +1,18 @@
+theme = dark:custom-dark,light:custom-light
+
+font-family = SF Mono
+font-style = Medium
+font-size = 14
+adjust-cell-height = 20%
+
+shell-integration-features = no-title,no-cursor
+cursor-style = bar
+cursor-style-blink = false
+
+window-position-x = 0
+window-position-y = 0
+window-padding-x = 6
+window-padding-y = 7
+
+clipboard-paste-protection = false
+link-url = false
