@@ -1,4 +1,5 @@
 theme = dark:custom-dark,light:custom-light
+macos-icon = xray
 
 font-family = SF Mono
 font-style = Medium
