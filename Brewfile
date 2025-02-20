@@ -27,7 +27,6 @@ brew "blocky"
 
 # applications
 cask "ghostty"
-cask "utm"
 cask "ollama"
 cask "firefox"
 cask "vscodium"
@@ -50,8 +49,9 @@ mas "iMovie", id: 408981434
 mas "WireGuard", id: 1451685025
 
 # paid
-mas "Spect", id: 1409975750
 mas "Acorn", id: 6737921844
+mas "Spect", id: 1409975750
+mas "Reeder", id: 1529448980
 mas "Simpletext", id: 1319340670
 
 # apps
